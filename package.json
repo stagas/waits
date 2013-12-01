@@ -1,0 +1,11 @@
+{
+  "name": "waits",
+  "repo": "stagas/waits",
+  "version": "0.0.1",
+  "author": "stagas",
+  "description": "callback factory factory that proceeds when all callback",
+  "keywords": ["callback", "factory", "parallel", "async"],
+  "license": "MIT",
+  "main": "index.js",
+  "engines": { "node": "*" }
+}
