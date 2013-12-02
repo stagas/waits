@@ -1,7 +1,7 @@
 {
   "name": "waits",
   "repo": "stagas/waits",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "author": "stagas",
   "description": "callback factory factory that proceeds when all callback",
   "keywords": ["callback", "factory", "parallel", "async"],
