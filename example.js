@@ -12,12 +12,14 @@ var fn = waits(next);
 async(fn());
 async(fn());
 async(fn());
+async(fn(function(x){
+  i += x;
+}));
 
 function next(){
-  console.log(i); // => 3
+  console.log(i); // => 7
 }
 
 function async(fn){
-  i++;
-  setTimeout(fn, Math.random() * 1000);
+  setTimeout(fn, Math.random() * 1000, i++);
 }

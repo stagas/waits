@@ -19,14 +19,16 @@ var fn = waits(next);
 async(fn());
 async(fn());
 async(fn());
+async(fn(function(x){
+  i += x;
+}));
 
 function next(){
-  console.log(i); // => 3
+  console.log(i); // => 7
 }
 
 function async(fn){
-  i++;
-  setTimeout(fn, Math.random() * 1000);
+  setTimeout(fn, Math.random() * 1000, i++);
 }
 ```
 
@@ -36,6 +38,10 @@ function async(fn){
 
 Factories a callback factory that will
 call `next` when all callback.
+
+### callback = fn([cb])
+
+Returns the callback, optionally pass `cb` to handle results if needed.
 
 ## Is it any good?
 

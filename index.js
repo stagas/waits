@@ -26,9 +26,10 @@ module.exports = waits;
 
 function waits(next){
   var c = 0;
-  return function(){
+  return function(fn){
     c++;
     return function(){
+      fn && fn.apply(this, arguments);
       --c || next();
     };
   };

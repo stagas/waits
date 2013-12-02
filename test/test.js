@@ -13,13 +13,15 @@ var fn = waits(next);
 async(fn());
 async(fn());
 async(fn());
+async(fn(function(x){
+  i += x;
+}));
 
 function next(){
-  assert(3 === i);
+  assert(7 === i);
   console.log('OK');
 }
 
 function async(fn){
-  i++;
-  setTimeout(fn, Math.random() * 1000);
+  setTimeout(fn, Math.random() * 1000, i++);
 }
